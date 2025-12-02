@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+
+.clientes-container {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* --- REUTILIZACIÓN DE ESTILOS --- */
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.view-header h1 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.back-btn, .add-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  transition: all 0.3s;
+}
+
+.back-btn:hover { background: #333; }
+.add-btn { background: #ff4500; color: #fff; border: none; font-weight: bold; }
+.add-btn:hover { background: #d4af37; color: #000; transform: scale(1.05); }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+.search-icon { color: #d4af37; margin-right: 10px; }
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 100%;
+  font-size: 1.1rem;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+.table-wrapper {
+  overflow-x: auto; 
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.clientes-table th, .clientes-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.clientes-table th {
+  background-color: #222;
+  color: #d4af37; 
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #333;
+}
+
+.clientes-table td {
+  border-bottom: 1px solid #292929;
+  font-family: sans-serif;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.clientes-table tbody tr:hover {
+  background-color: #222;
+}
+
+/* EFECTO PARA FILAS INACTIVAS */
+.clientes-table tbody tr.inactivo {
+    opacity: 0.5;
+    filter: grayscale(0.5);
+    transition: all 0.3s;
+}
+.clientes-table tbody tr.inactivo:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    background-color: #331515; /* Fondo rojo oscuro sutil */
+}
+
+
+/* BADGES DE VISITAS */
+.visitas-badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.visitas-badge.gold { background: #d4af37; color: #000; }
+.visitas-badge.silver { background: #a2a2a2; color: #000; }
+.visitas-badge.bronze { background: #8b4513; color: #fff; }
+
+/* BOTONES DE ACCIÓN (Contenedor y Botones) */
+.action-cell {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-btn {
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón Editar */
+.action-btn.edit {
+  background: #444;
+  color: #fff;
+}
+
+.action-btn.edit:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Botón de Estado (Dar de Baja/Inactivo) */
+.action-btn.estado {
+  background: #dc3545; /* Rojo de advertencia */
+  color: #fff;
+}
+
+.action-btn.estado:hover {
+    background: #c82333; /* Rojo más oscuro al hacer hover */
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+  font-size: 1.2rem;
+  margin: 0;
+}

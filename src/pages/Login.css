@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #000;
+  overflow: hidden; 
+  height: 100vh;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* =========================================
+   FONDO BARBERÍA "DARK MOOD"
+   ========================================= */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  
+  /* CAMBIO: Foto real de barbería oscura y elegante */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), /* Oscuridad encima */
+    url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop'); 
+  background-size: cover;
+  background-position: center;
+}
+
+/* =========================================
+   LA TARJETA (El "Trono")
+   ========================================= */
+.login-box {
+  background: rgba(18, 18, 18, 0.95);
+  padding: 0; /* Quitamos padding para que la barra pegue al borde */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 4px; /* Bordes casi rectos, más rudo */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  overflow: hidden; /* Para que la barra no se salga */
+  position: relative;
+  border: 1px solid #333;
+}
+
+/* EL TOQUE DE BARBERÍA: La barra superior animada */
+.barber-pole {
+  height: 10px;
+  width: 100%;
+  /* Patrón clásico rojo, blanco y azul */
+  background: repeating-linear-gradient(
+    45deg,
+    #8b0000,
+    #8b0000 20px,
+    #f5f5f5 20px,
+    #f5f5f5 40px,
+    #00008b 40px,
+    #00008b 60px
+  );
+  /* Animación sutil */
+  background-size: 200% 200%;
+  animation: movePole 4s linear infinite;
+}
+
+@keyframes movePole {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Contenido interno de la tarjeta */
+.login-content {
+  padding: 3rem 2rem;
+}
+
+.login-box h2 {
+  color: #fff;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+
+.login-subtitle {
+  color: #8b0000; /* Rojo sangre oscuro */
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* =========================================
+   INPUTS ESTILO "NAVAJA DE ACERO"
+   ========================================= */
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  background-color: #1a1a1a; 
+  border: none;
+  border-bottom: 2px solid #444; /* Solo línea abajo */
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  background-color: #222;
+  border-bottom-color: #d4af37; /* Dorado metálico al enfocar */
+}
+
+/* =========================================
+   BOTÓN INDUSTRIAL
+   ========================================= */
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 1.5rem;
+  background-color: #fff; /* Blanco contraste máximo */
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%); /* Corte estilo militar/industrial */
+}
+
+.login-btn:hover {
+  background-color: #d4af37; /* Dorado al pasar mouse */
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.register-link {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.register-link span {
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 1px solid #d4af37;
+}

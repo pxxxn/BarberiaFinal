@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+
+.usuarios-container {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Reutilización de estilos de Header/Buscador para consistencia */
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.view-header h1 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.back-btn, .add-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  transition: all 0.3s;
+}
+
+.back-btn:hover { background: #333; }
+.add-btn { background: #ff4500; color: #fff; border: none; font-weight: bold; }
+.add-btn:hover { background: #d4af37; color: #000; transform: scale(1.05); }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+.search-icon { color: #d4af37; margin-right: 10px; }
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 100%;
+  font-size: 1.1rem;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* GRID DE USUARIOS */
+.usuarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+/* TARJETA DE ACCESO */
+.usuario-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.usuario-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff4500; /* Borde naranja agresivo */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- ESTILOS DE ESTADO (NUEVOS/CORREGIDOS) --- */
+.status-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.status-badge.active {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28a745; /* Verde */
+  border: 1px solid #28a745;
+}
+
+.status-badge.inactive {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #dc3545; /* Rojo */
+  border: 1px solid #dc3545;
+}
+
+/* Efecto de atenuación para usuarios dados de baja */
+.usuario-card.inactivo {
+  opacity: 0.6;
+  filter: grayscale(0.8);
+}
+.usuario-card.inactivo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+/* ------------------------------------------- */
+
+.icon-main {
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.usuario-info h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rol-badge {
+  display: inline-block;
+  background: #222;
+  color: #ff4500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ff4500;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.acciones-usuario {
+  margin-top: 1.5rem;
+}
+
+.action-btn-key {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.action-btn-key:hover {
+  background: #d4af37;
+  color: #000;
+}
